@@ -17,7 +17,23 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <ToastContainer />
+      <div
+        style={{
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+          display: "flex",
+        }}
+        className="container"
+      >
+        <div
+          style={{
+            width: "200px",
+          }}
+        >
+          <ToastContainer />
+        </div>
+      </div>
     </>
   );
 }

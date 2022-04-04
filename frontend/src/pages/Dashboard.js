@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import GoalForm from "../components/GaolForm";
 import Spinner from "../components/Spinner";
 import { getGoals, reset } from "../features/goals/goalSlice";
+import GoalItem from "../components/GoalItem";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -39,9 +40,13 @@ function Dashboard() {
         <p>Goals Dashboard</p>
       </section>
       <GoalForm />
-      {goals.map((goal) => (
-        <div key={goal._id}>{goal.text}</div>
-      ))}
+      <section className="content">
+        {goals.length > 0 ? (
+          goals.map((goal) => <GoalItem key={goal._id} goal={goal} />)
+        ) : (
+          <h3>You have no goals</h3>
+        )}
+      </section>
     </>
   );
 }
